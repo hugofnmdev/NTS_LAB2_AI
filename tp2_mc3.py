@@ -1,7 +1,6 @@
 from rng import *
 from utils import *
-
-        
+       
 class MarkovChain3:
     def __init__(self,seed):
         self.mc = dict()

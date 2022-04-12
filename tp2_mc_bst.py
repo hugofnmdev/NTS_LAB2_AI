@@ -15,7 +15,6 @@ class MarkovChainBST:
         with a special token for starting and ending a sentence
         """
         pass
-        
                     
     def generate(self):
         """
@@ -27,9 +26,9 @@ class MarkovChainBST:
 
 MINLEN = 4    
 SEED = 23456
-generator = MarkovChain(SEED)
-#generator.train(getText('corpus/asoiaf1.txt',MINLEN))
+generator = MarkovChainBST(SEED)
+generator.train(getText('corpus/asoiaf1.txt',MINLEN))
 #generator.train(getText('corpus/asoiaf2.txt',MINLEN))
 #generator.train(getText('corpus/asoiaf3.txt',MINLEN))
 
-#print(generator.generate())
+print(generator.generate())

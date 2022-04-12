@@ -17,7 +17,7 @@ def insert(B,x):
     @param x : element
     inserts a value in the BST"
     """
-    pass
+    
     
 def search(B,x):
     """

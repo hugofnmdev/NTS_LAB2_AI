@@ -12,15 +12,37 @@ class MarkovChain:
         Builds the Markov Chain by creating a dictionary word -> list of possible successors, 
         with a special token for starting and ending a sentence
         """
-        pass
+        l = text
+        nextword = {}        
+        nextword["Start"] = []
+        for i in range(len(l)):
+            s = l[i]
+            nextword["Start"].append(s[0])
+            for j in range(len(s)):
+                key = s[j]
+                if not key in nextword:
+                    nextword[key] = []
+                if j+1 < len(s):
+                    nextword[key].append(s[j+1])
+                if j+1 == len(s):
+                    nextword[key].append("End")
+        self.mc = nextword
         
                     
     def generate(self):
         """
-        Generates randomly a sentence)
+        Generates randomly a sentence
         @return a string
         """
-        pass
+        key = "Start"
+        output = ""
+        nextword = self.mc
+        while key != "End":
+            n = self.rng.randInt(0,len(nextword[key]))
+            key = nextword[key][n]
+            if key != "End":
+                output += " " + key
+        return output
 
 
 MINLEN = 4    
